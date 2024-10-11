@@ -1,0 +1,116 @@
+.hero-container {
+    min-height: 100vh; /* Changed from 100% to 100vh */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-color);
+    padding: 2rem;
+    position: relative; /* Add this */
+    z-index: 1; /* Add this */
+    /* Remove the padding-top: 7rem; line */
+}
+
+.hero-content {
+    width: 90%;  /* Increased from 60% */
+    max-width: 1200px;  /* Added max-width for larger screens */
+    height: auto;  /* Changed from fixed height */
+    min-height: 10%;  /* Added min-height instead of fixed height */
+    background-color: var(--text-color);
+    border-radius: 1rem;  /* Changed from 15px to 1rem */
+    padding: 2rem;  /* Increased padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-content-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.typing-text {
+    color: var(--text-color);
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+}
+
+.typing-text::after {
+    content: '|';
+    position: absolute;
+    right: -0.1em;
+    top: 0;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+     50% { opacity: 0; }
+}
+
+.hero-content-image {
+    width: 100%;
+    max-width: 25rem;  /* Increased from 18.75rem to 25rem */
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.hero-content-text {
+    color: var(--background-color);
+    text-align: center;
+    width: 100%;  /* Changed from 50% */
+}
+
+.hero-content-text-p {
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
+    line-height: 1.6;
+    max-width: 80ch;  /* Added max-width for better readability on very wide screens */
+    margin: 0 auto;  /* Center the text block */
+}
+
+@media (min-width: 48em) {
+    .hero-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-content-image {
+        width: 40%;  /* Increased from 30% to 40% */
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
+
+    .hero-content-text {
+        width: 60%;  /* Adjusted from 70% to 60% */
+        text-align: left;
+    }
+}
+
+.typing-text.typing-complete::after {
+    display: none;
+}
+
+.typing-text-container {
+    width: 100%;
+    text-align: center;
+    top: 9rem; /* Adjust this value to position below the navbar */
+    left: 0; /* Add this */
+}
+

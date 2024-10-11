@@ -1,0 +1,11 @@
+.contact-container {
+    background-color: var(--Nav-color);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
