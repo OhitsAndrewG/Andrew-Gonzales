@@ -1,20 +1,24 @@
 .projects-container {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: flex-start;
+    align-items: stretch;
     width: 100%;
     min-height: 100vh;
     background-color: var(--background-color);
-    color: var(--background-color);
     padding: 11rem 2rem;
-    gap: 2rem; /* Add gap between project cards */
+    gap: 2rem;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
     .projects-container {
         justify-content: space-around;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 11rem 1rem;
     }
 }
 
@@ -65,5 +69,6 @@
         width: 100%; /* 1 card per row on small screens */
     }
 }
+
 
 

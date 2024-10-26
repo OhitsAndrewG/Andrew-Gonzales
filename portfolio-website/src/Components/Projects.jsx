@@ -11,10 +11,11 @@ export default function Projects() {
       imageUrl: "/plant.png", // Replace with actual image path
     },
     {
-      name: "Plotting DNA",
+      name: "Visualizing MFI Per Diluton Data",
       description:
-        "This is another project I worked on. It demonstrates my skills in.asdfasfasdfsafdfsadfasdfasdfasdfasdf..",
-      imageUrl: "/path/to/another-image.jpg", // Replace with actual image path
+        "Previous studies in the field of medical transplantations have shown that the reliance on mean fluroescence intensity(MFI) produced by multiplex flow cyometric single bead assays are only semi-quantatative and do not give an accurate evaluation doner specific antibody concentration." +
+        " This then creates implications in the clincial enviroment for assesing treatment for pre imposed transplant recipients. (Plotted MFI per dilution for each sample)",
+      imageUrl: "/mfi_image.png", // Replace with actual image path
     },
 
     // Add more projects as needed
