@@ -1,23 +1,291 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Plain, minimal stylesheet. No frameworks, no animation. */
 
 :root {
-    --background-color: #2e2a24;
-    --Nav-color: #1a1714;
-    --text-color: #f5c98a;
-    --font-size-base: 16px;
-    --main-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
+  /* One accent, used only for structure. Swap this to restyle the page. */
+  --accent: #990000;
+  --paper: #fffff8;
+  --ink: #111111;
+  --rule: #c9c4b4;
+  --quiet: #555044;
 }
 
 body {
-    font-family: var(--main-font);
-    background-color: var(--background-color);
-    color:var(--text-color);
-    line-height: 1.6;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.45;
+  margin: 0;
 }
 
- 
+.page {
+  counter-reset: section;
+  max-width: 34em;
+  margin: 0 auto;
+  padding: 2em 1.25em 3em;
+}
+
+a {
+  color: #0000ee;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+h1 {
+  font-size: 1.9em;
+  font-weight: bold;
+  margin: 0 0 0.15em;
+}
+
+h2 {
+  font-size: 1.3em;
+  margin: 0 0 0.5em;
+  color: var(--accent);
+}
+
+h2::before {
+  counter-increment: section;
+  content: counter(section) ". ";
+}
+
+h3 {
+  font-size: 1.05em;
+  margin: 1.2em 0 0.1em;
+}
+
+p {
+  margin: 0 0 0.8em;
+}
+
+#about p,
+#experience li,
+.project p,
+.project li,
+#education p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.meta,
+.tech,
+.totop,
+.subtitle,
+figcaption,
+caption,
+footer p {
+  text-align: left;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 1.6em 0;
+}
+
+ul {
+  margin: 0.3em 0 0.8em;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.2em;
+}
+
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 0.6em;
+}
+
+dd {
+  margin: 0 0 0.2em;
+}
+
+nav {
+  margin-top: 0.9em;
+  border-top: 2px solid var(--accent);
+  padding-top: 0.4em;
+}
+
+.headshot {
+  float: right;
+  width: 130px;
+  border: 1px solid var(--accent);
+  margin: 0.2em 0 0.75em 1.25em;
+}
+
+.subtitle {
+  margin: 0 0 0.2em;
+}
+
+span.meta {
+  font-size: 0.85em;
+}
+
+.meta {
+  font-size: 0.9em;
+  color: var(--quiet);
+  margin: 0 0 0.5em;
+}
+
+.tech {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85em;
+  color: var(--quiet);
+}
+
+.project {
+  margin-bottom: 1.8em;
+}
+
+.verify-code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.05em;
+  letter-spacing: 0.08em;
+  background: #f2eee2;
+  border: 1px solid var(--rule);
+  padding: 0.25em 0.6em;
+  user-select: all;
+}
+
+.degree-image {
+  display: block;
+  max-width: 20em;
+  width: 100%;
+  border: 1px solid var(--rule);
+  margin: 0.6em 0 0.4em;
+}
+
+figure {
+  margin: 0.9em 0 1em;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  border: 1px solid var(--rule);
+}
+
+figcaption {
+  font-size: 0.85em;
+  color: var(--quiet);
+  margin-top: 0.3em;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0.6em 0 1em;
+  font-size: 0.9em;
+}
+
+caption {
+  text-align: left;
+  font-size: 0.85em;
+  color: var(--quiet);
+  padding-bottom: 0.3em;
+}
+
+th,
+td {
+  border: 1px solid var(--rule);
+  padding: 0.2em 0.6em;
+  text-align: left;
+}
+
+th {
+  background: #f2eee2;
+  color: var(--accent);
+}
+
+footer {
+  font-size: 0.9em;
+}
+
+.totop {
+  font-size: 0.8em;
+  text-align: right;
+  margin: 0.6em 0 0;
+}
+
+header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 30em) {
+  .headshot {
+    float: none;
+    margin: 0 0 0.75em;
+  }
+}
+
+/* ---- Print: this page is a document, so let it behave like one ---- */
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+    font-size: 11pt;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+
+  nav,
+  .totop {
+    display: none;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  /* Paper has no hyperlinks, so spell them out */
+  #about a::after,
+  #projects a::after,
+  #education a::after,
+  footer a::after {
+    content: " <" attr(href) ">";
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+
+  h2 {
+    color: #000000;
+  }
+
+  th {
+    background: none;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  figure,
+  table,
+  li {
+    break-inside: avoid;
+  }
+
+  hr {
+    border-top: 1px solid #000000;
+  }
+
+  .headshot {
+    border-color: #000000;
+  }
+}
