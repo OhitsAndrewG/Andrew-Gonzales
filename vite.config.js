@@ -14,4 +14,7 @@ export default defineConfig({
     ),
   },
   base: '/Andrew-Gonzales/',
+  build: {
+    outDir: 'docs',
+  },
 })
